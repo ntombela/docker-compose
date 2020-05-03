@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+
+  client:
+    build: client/Ntombela.InventoryTracker.Web/
+    ports: 
+      - "80:80"
+    volumes: 
+      - "C:/Users/MAXPLANCK/source/repos/Sandbox/Docker-Compose/InventoryTracker/client/Ntombela.InventoryTracker.Web:C:/inetpub/wwwroot"
+    depends_on: 
+      - server
+
+  server:
+    build: server/Ntombela.InventoryTracker.WebApi/
+    ports: 
+      - "81:81"
+    volumes: 
+      - "C:/Users/MAXPLANCK/source/repos/Sandbox/Docker-Compose/InventoryTracker/server/Ntombela.InventoryTracker.WebApi:C:/inetpub/wwwroot"
